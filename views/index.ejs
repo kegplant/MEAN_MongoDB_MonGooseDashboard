@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello World!</h1>
+    <%for (animal of animals){%>
+        <p>Name: <%=animal.name%>
+            <a href='/mongooses/<%=animal._id%>'>details</a>
+            <a href='/mongooses/edit/<%=animal._id%>'>edit</a>
+            <form action='/mongooses/destroy/<%=animal._id%>' method='post'>
+                <button>delete</button>
+            </form>
+        </p>
+        <p>Species: <%=animal.specie%></p>
+        <hr>
+        <%}%>
+        <form action='/mongooses/new'>
+        <button>Add an animal</button>
+    </form>
+</body>
+</html>
